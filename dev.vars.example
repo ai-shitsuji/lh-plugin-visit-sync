@@ -1,0 +1,4 @@
+# ローカル検証用。このファイルを .dev.vars にコピーして値を入れる（.dev.vars は Git に入らない）
+LINE_HARNESS_API_KEY=
+SOURCE_TOKEN=
+WEBHOOK_SECRET=

@@ -1,0 +1,27 @@
+name = "line-harness-plugin-visit-sync"
+main = "src/index.ts"
+compatibility_date = "2026-09-07"
+
+[observability]
+enabled = true
+
+# 定期取得。検証後に ["0 * * * *"] にすると毎時実行。初期状態では定期実行しない。
+[triggers]
+crons = []
+
+[vars]
+# 本体 API のオリジン（管理画面の /console は付けない）
+LINE_HARNESS_API_URL = "https://your-line-harness.example.com"
+# 本体側の LINE アカウントID（管理画面「操作中のLINEアカウント」で確認）。複数アカウント環境では必須
+LINE_ACCOUNT_ID = ""
+# 来院実績を返す外部ソースの URL（定期取得を使う場合のみ）
+SOURCE_URL = ""
+# "true" のあいだは読み取りだけ。件数を確認してから "false" にする
+DRY_RUN = "true"
+# 走査する友だち数の上限。超えたら書き込み前に停止する
+MAX_FRIENDS = "5000"
+
+# secrets（Git に入れない）:
+#   wrangler secret put LINE_HARNESS_API_KEY   … 本体の API キー
+#   wrangler secret put SOURCE_TOKEN           … 外部ソースの Bearer トークン（任意）
+#   wrangler secret put WEBHOOK_SECRET         … POST /webhook の HMAC 秘密（プッシュを使う場合のみ）

@@ -1,0 +1,8 @@
+node_modules/
+dist/
+dist-mcp/
+.wrangler/
+.dev.vars*
+.env*
+*.tsbuildinfo
+worker-configuration.d.ts

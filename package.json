@@ -1,0 +1,27 @@
+{
+  "name": "line-harness-plugin-visit-sync",
+  "version": "0.1.0",
+  "private": true,
+  "description": "L Harness プラグイン: 外部の来院実績（来院チェックイン・予約・POS）を友だち metadata visitCount/lastVisitAt/firstVisitAt に同期する独立 Cloudflare Worker",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/*.test.ts"
+  },
+  "dependencies": {
+    "@line-harness/sdk": "0.24.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240620.0",
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0",
+    "wrangler": "^3.60.0"
+  }
+}
