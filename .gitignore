@@ -6,3 +6,4 @@ dist-mcp/
 .env*
 *.tsbuildinfo
 worker-configuration.d.ts
+test/*.log
