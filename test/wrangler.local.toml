@@ -1,0 +1,11 @@
+name = "line-harness-plugin-visit-sync-local"
+main = "../src/index.ts"
+compatibility_date = "2026-09-07"
+[triggers]
+crons = []
+[vars]
+LINE_HARNESS_API_URL = "http://127.0.0.1:8790"
+LINE_ACCOUNT_ID = "acc1"
+SOURCE_URL = "http://127.0.0.1:8791/visit-stats"
+DRY_RUN = "true"
+MAX_FRIENDS = "5000"

@@ -15,8 +15,8 @@ import { fetchVisitFeed } from './source.js'
 import { syncVisits } from './sync.js'
 import { verifyWebhook } from './webhook.js'
 
-export const PLUGIN_NAME = 'visit-sync'
-export const PLUGIN_VERSION = '0.1.0'
+const PLUGIN_NAME = 'visit-sync'
+const PLUGIN_VERSION = '0.1.0'
 
 export interface Env {
   LINE_HARNESS_API_URL: string
@@ -38,8 +38,9 @@ function assertEnv(env: Env): { dryRun: boolean; maxFriends: number } {
   } catch {
     throw new Error('LINE_HARNESS_API_URL が URL ではありません。')
   }
-  if (url.protocol !== 'https:' || url.hostname === 'your-line-harness.example.com') {
-    throw new Error('LINE_HARNESS_API_URL に本体の HTTPS API URL を設定してください。')
+  const isLocal = url.hostname === 'localhost' || url.hostname === '127.0.0.1'
+  if ((url.protocol !== 'https:' && !isLocal) || url.hostname === 'your-line-harness.example.com') {
+    throw new Error('LINE_HARNESS_API_URL に本体の HTTPS API URL を設定してください（localhost は検証用に http 可）。')
   }
   const maxFriends = env.MAX_FRIENDS ? Number(env.MAX_FRIENDS) : 5000
   if (!Number.isInteger(maxFriends) || maxFriends <= 0) throw new Error('MAX_FRIENDS は正の整数を指定してください。')
