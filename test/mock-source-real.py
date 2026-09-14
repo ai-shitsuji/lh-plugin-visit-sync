@@ -1,4 +1,4 @@
-"""test100 の実在する友だち1人の lineUserId(ローカルファイルから読む)で来院実績を返す偽ソース。書き込みはプラグイン側の DRY_RUN で抑止。"""
+"""test100 の実在する友だち1人の lineUserId(ローカルファイルから読む)で来店実績を返す偽ソース。書き込みはプラグイン側の DRY_RUN で抑止。"""
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 uid = open("test/.friend_uid").read().strip()

@@ -1,22 +1,22 @@
-# 来院実績同期プラグイン (visit-sync)
+# 来店実績同期プラグイン (visit-sync)
 
-外部の来院実績（来院チェックイン・予約システム・POS など）を、L Harness の友だち metadata に同期する独立した Cloudflare Worker です。本体のコードもD1スキーマも触りません。
+外部の来店実績（来院・来店・利用の記録。来店チェックイン、予約システム、POS など）を、L Harness の友だち metadata に同期する独立した Cloudflare Worker です。治療院・サロン・店舗など、業種は問いません。本体のコードもD1スキーマも触りません。
 
 書き込むのは次の3つだけです。
 
 | metadata キー | 内容 |
 | --- | --- |
-| `visitCount` | 来院回数（整数）。公式プラグイン「[条件タグ付け](https://github.com/Shudesu/line-harness-oss/tree/main/examples/plugins/tag-rules)」がそのまま読む名前です |
-| `lastVisitAt` | 最終来院日（`YYYY-MM-DD` または ISO8601） |
-| `firstVisitAt` | 初回来院日（任意） |
+| `visitCount` | 来店回数（整数）。公式プラグイン「[条件タグ付け](https://github.com/Shudesu/line-harness-oss/tree/main/examples/plugins/tag-rules)」がそのまま読む名前です |
+| `lastVisitAt` | 最終来店日（`YYYY-MM-DD` または ISO8601） |
+| `firstVisitAt` | 初回来店日（任意） |
 
-加えて `visitSyncedAt`（最後に書き込んだ時刻）を残します。**タグ付けはしません。** 「来院3回以上にタグを付けてシナリオを流す」は、このプラグインで `visitCount` を入れたうえで、公式「条件タグ付け」を組み合わせてください。
+加えて `visitSyncedAt`（最後に書き込んだ時刻）を残します。**タグ付けはしません。** 「来店3回以上にタグを付けてシナリオを流す」は、このプラグインで `visitCount` を入れたうえで、公式「条件タグ付け」を組み合わせてください。
 
 ## 構成
 
 ```text
-来院チェックイン / 予約 / POS（あなたのシステム）
-    ↓ JSON（lineUserId・来院回数・日付だけ）
+来店チェックイン / 予約 / POS（あなたのシステム）
+    ↓ JSON（lineUserId・来店回数・日付だけ）
 visit-sync Worker（このプラグイン・自分のCloudflare）
     ↓ SDK（friends.list / friends.setMetadata）
 L Harness 本体（公式アップデートの対象・触らない）
@@ -27,7 +27,7 @@ L Harness 本体（公式アップデートの対象・触らない）
 動かし方は2通りあります。どちらか一方でも、両方でも使えます。
 
 - **定期取得（pull）**: cron で `SOURCE_URL` を読みに行く。1時間に1回など
-- **プッシュ（webhook）**: 来院した瞬間に、外部側から `POST /webhook` へ署名付きで送る
+- **プッシュ（webhook）**: 来店した瞬間に、外部側から `POST /webhook` へ署名付きで送る
 
 ## 外部ソースの契約
 

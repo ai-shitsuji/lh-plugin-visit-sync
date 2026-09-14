@@ -14,7 +14,7 @@ crons = []
 LINE_HARNESS_API_URL = "https://your-line-harness.example.com"
 # 本体側の LINE アカウントID（管理画面「操作中のLINEアカウント」で確認）。複数アカウント環境では必須
 LINE_ACCOUNT_ID = ""
-# 来院実績を返す外部ソースの URL（定期取得を使う場合のみ）
+# 来店実績を返す外部ソースの URL（定期取得を使う場合のみ）
 SOURCE_URL = ""
 # "true" のあいだは読み取りだけ。件数を確認してから "false" にする
 DRY_RUN = "true"

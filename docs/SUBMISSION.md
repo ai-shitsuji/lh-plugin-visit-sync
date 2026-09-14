@@ -4,15 +4,15 @@
 
 ## プラグイン名・バージョン
 
-来院実績同期 (visit-sync) 0.1.0
+来店実績同期 (visit-sync) 0.1.0
 
 ## 解決する課題・できること
 
-治療院・サロン・店舗が持っている「来院実績」（来院チェックイン、予約システム、POS）を、L Harness の友だち metadata `visitCount` / `lastVisitAt` / `firstVisitAt` に同期する独立 Cloudflare Worker です。
+治療院・サロン・店舗が持っている「来店実績」（来店チェックイン、予約システム、POS）を、L Harness の友だち metadata `visitCount` / `lastVisitAt` / `firstVisitAt` に同期する独立 Cloudflare Worker です。
 
-公式プラグイン「条件タグ付け」は `visitCount` を読んでタグを付けますが、その値を誰が入れるかは「事前に本体APIなどから登録」となっていました。このプラグインはその入れる側です。外部側は lineUserId と来院回数・日付だけを返すJSONを用意すれば、あとは公式プラグインとシナリオ配信につながります。
+公式プラグイン「条件タグ付け」は `visitCount` を読んでタグを付けますが、その値を誰が入れるかは「事前に本体APIなどから登録」となっていました。このプラグインはその入れる側です。外部側は lineUserId と来店回数・日付だけを返すJSONを用意すれば、あとは公式プラグインとシナリオ配信につながります。
 
-- 定期取得（cron で外部の JSON を読む）と、来院した瞬間のプッシュ（署名付き webhook）の2経路
+- 定期取得（cron で外部の JSON を読む）と、来店した瞬間のプッシュ（署名付き webhook）の2経路
 - `DRY_RUN`（既定 true）で件数を確認してから書き込み
 - 差分があるときだけ書き込む冪等な動作。再実行しても同じ結果
 - タグの付与・削除、メッセージ送信はしない（本体の公式機能に委ねる）
@@ -38,7 +38,7 @@
 
 - 使用API: `GET /api/friends`（一覧・ページング）、`PUT /api/friends/:id/metadata`（差分があるときだけ）
 - 必要なキー: 本体の API キー（Worker secret `LINE_HARNESS_API_KEY`）。外部ソースの Bearer（任意 `SOURCE_TOKEN`）。プッシュ用の HMAC 秘密（任意 `WEBHOOK_SECRET`）
-- 読む情報: 友だちの `id` / `lineUserId` / `metadata` / `lineAccountId`。外部からは lineUserId と来院回数・日付のみ
+- 読む情報: 友だちの `id` / `lineUserId` / `metadata` / `lineAccountId`。外部からは lineUserId と来店回数・日付のみ
 - 書く情報: metadata の `visitCount` / `lastVisitAt` / `firstVisitAt` / `visitSyncedAt` のみ
 - 外部送信先: 外部ソースへの取得リクエスト（認証ヘッダのみ）。それ以外に送信しない。ログは件数だけで個人情報を出さない
 - 通知の重複防止: 通知は送らない。プッシュは timestamp+HMAC で再送・改ざんを拒否、同一 lineUserId は後勝ち

@@ -2,7 +2,7 @@
   "name": "line-harness-plugin-visit-sync",
   "version": "0.1.0",
   "private": true,
-  "description": "L Harness プラグイン: 外部の来院実績（来院チェックイン・予約・POS）を友だち metadata visitCount/lastVisitAt/firstVisitAt に同期する独立 Cloudflare Worker",
+  "description": "L Harness プラグイン: 外部の来店実績（来店チェックイン・予約・POS）を友だち metadata visitCount/lastVisitAt/firstVisitAt に同期する独立 Cloudflare Worker",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.js",

@@ -1,7 +1,7 @@
 /**
- * L Harness Plugin: 来院実績同期 (visit-sync)
+ * L Harness Plugin: 来店実績同期 (visit-sync)
  *
- * 外部の来院実績（来院チェックイン・予約・POS など）を、本体の友だち metadata
+ * 外部の来店実績（来店チェックイン・予約・POS など）を、本体の友だち metadata
  * `visitCount` / `lastVisitAt` / `firstVisitAt` に同期する独立 Cloudflare Worker。
  * タグ付けはしない。公式プラグイン「条件タグ付け」が `visitCount` を読んでタグを付ける。
  *

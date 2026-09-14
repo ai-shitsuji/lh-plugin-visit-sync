@@ -1,12 +1,12 @@
 /**
- * 外部ソース（来院チェックイン・予約・POS など）から来院実績を取り出す。
+ * 外部ソース（来店チェックイン・予約・POS など）から来店実績を取り出す。
  *
  * 契約は1本だけ:
  *   GET {SOURCE_URL}[?cursor=...]   Authorization: Bearer {SOURCE_TOKEN}（任意）
  *   → { "items": [ { "lineUserId": "U...", "visitCount": 12, "lastVisitAt": "2026-09-11", "firstVisitAt": "2024-01-05" } ],
  *       "nextCursor": "..." | null }
  *
- * 外部側が返すのは lineUserId と来院回数・日付だけ。氏名や連絡先は受け取らない。
+ * 外部側が返すのは lineUserId と来店回数・日付だけ。氏名や連絡先は受け取らない。
  */
 
 const MAX_PAGES = 50

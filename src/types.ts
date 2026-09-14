@@ -1,7 +1,7 @@
 /**
- * 来院実績同期プラグインの型定義。
+ * 来店実績同期プラグインの型定義。
  *
- * 外部（予約・POS・来院チェックイン等）から受け取る「来院実績」と、
+ * 外部（予約・POS・来院チェックイン等）から受け取る「来店実績」と、
  * L Harness の友だち metadata に書き込むフィールドをここで固定する。
  * metadata キー `visitCount` は公式プラグイン「条件タグ付け」が読む名前に合わせている。
  */
@@ -9,11 +9,11 @@
 /** 外部ソースが返す1件。lineUserId は LINE の userId（"U" 始まり）。 */
 export interface VisitItem {
   lineUserId: string
-  /** 来院回数（0以上の整数）。 */
+  /** 来店回数（0以上の整数）。 */
   visitCount: number
-  /** 最終来院日。YYYY-MM-DD または ISO8601。省略可。 */
+  /** 最終来店日。YYYY-MM-DD または ISO8601。省略可。 */
   lastVisitAt?: string | null
-  /** 初回来院日。省略可。 */
+  /** 初回来店日。省略可。 */
   firstVisitAt?: string | null
 }
 
