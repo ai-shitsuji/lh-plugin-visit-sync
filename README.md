@@ -139,7 +139,7 @@ Content-Type: application/json
 | --- | --- |
 | L Harness 本体 | 0.24.1 |
 | `@line-harness/sdk` | 0.24.0 |
-| 動作確認日 | 2026-09-11 |
+| 動作確認日 | 2026-09-14（検証用インスタンスに対し DRY_RUN・実書き込み・冪等再実行・null での復元を確認） |
 
 ## 変更履歴
 

@@ -1,0 +1,11 @@
+name = "line-harness-plugin-visit-sync-test100-local"
+main = "../src/index.ts"
+compatibility_date = "2026-09-07"
+[triggers]
+crons = []
+[vars]
+LINE_HARNESS_API_URL = "https://lh-test100.k-taka01.workers.dev"
+LINE_ACCOUNT_ID = "67ad8610-42aa-455e-a52d-982c70371a53"
+SOURCE_URL = "http://127.0.0.1:8791/visit-stats"
+DRY_RUN = "true"
+MAX_FRIENDS = "5000"
