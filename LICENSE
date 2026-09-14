@@ -1,6 +1,9 @@
 MIT License
 
-Copyright (c) 2026 Shudesu
+Copyright (c) 2026 株式会社ひまわり (Himawari Inc.)
+
+Portions of the project scaffold are derived from line-harness-oss
+(https://github.com/Shudesu/line-harness-oss), Copyright (c) 2026 Shudesu, MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

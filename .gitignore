@@ -8,3 +8,5 @@ dist-mcp/
 worker-configuration.d.ts
 test/*.log
 test/.friend_uid
+test/wrangler.test100.toml
+test/mock-source-real.py
