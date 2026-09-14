@@ -7,3 +7,4 @@ dist-mcp/
 *.tsbuildinfo
 worker-configuration.d.ts
 test/*.log
+test/.friend_uid

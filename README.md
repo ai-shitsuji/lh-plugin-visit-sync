@@ -59,7 +59,7 @@ npm run typecheck
 npm test
 ```
 
-1. 本体の管理画面で「操作中のLINEアカウント」のIDを確認します。
+1. 本体側の LINE アカウントIDを確認します。これは友だち追加リンクの `account=` の数字ではなく、`GET /api/friends` が返す `lineAccountId`（UUID 形式）です。`curl -H 'Authorization: Bearer <APIキー>' https://<本体>/api/friends?limit=1` で確認できます。
 2. `wrangler.toml` の `LINE_HARNESS_API_URL`（本体APIのオリジン。管理画面の `/console` は付けない）、`LINE_ACCOUNT_ID`、定期取得を使うなら `SOURCE_URL` を設定します。
 3. ローカルだけの `.dev.vars` を作り（`dev.vars.example` を参照）、`LINE_HARNESS_API_KEY` を入れます。Git には含めません。
 4. `DRY_RUN` は `"true"` のまま、ローカルで定期処理を呼んで件数を確認します。
