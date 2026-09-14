@@ -1,5 +1,7 @@
 # 掲載申請の下書き（plugin-submission.yml の各欄にそのまま貼る）
 
+**投稿済（2026-09-14）: https://github.com/Shudesu/line-harness-oss/issues/357**
+
 > 公開Issueになるので、APIキー・顧客データは絶対に書かない。
 
 ## プラグイン名・バージョン
