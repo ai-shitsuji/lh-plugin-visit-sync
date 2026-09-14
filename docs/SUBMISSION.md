@@ -19,12 +19,12 @@
 
 ## ソースコードURL・ライセンス
 
-（GitHub リポジトリの URL を入れる）
+https://github.com/ai-shitsuji/lh-plugin-visit-sync
 ライセンス: MIT
 
 ## 導入・停止手順のURL
 
-（README.md の URL を入れる）
+https://github.com/ai-shitsuji/lh-plugin-visit-sync#readme（導入・有効化・停止の手順は README の「セットアップ」「有効化・停止」）
 
 ## 動作確認した本体・SDK・実行環境のバージョン
 
@@ -46,7 +46,7 @@
 
 ## 作者名・サポート窓口URL
 
-株式会社ひまわり（加藤貴之）／（サポート窓口 URL または GitHub Issues の URL）
+株式会社ひまわり（加藤貴之）／サポート窓口: https://github.com/ai-shitsuji/lh-plugin-visit-sync/issues
 
 ---
 

@@ -49,6 +49,15 @@ L Harness 本体（公式アップデートの対象・触らない）
 
 定期取得のときは `GET {SOURCE_URL}` に、`SOURCE_TOKEN` があれば `Authorization: Bearer` を付けて取りに行きます。
 
+## 入手
+
+```bash
+git clone https://github.com/ai-shitsuji/lh-plugin-visit-sync.git
+cd lh-plugin-visit-sync
+```
+
+不具合・要望は https://github.com/ai-shitsuji/lh-plugin-visit-sync/issues へ。
+
 ## セットアップ
 
 Node.js 22 以上。
