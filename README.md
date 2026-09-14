@@ -154,4 +154,6 @@ Content-Type: application/json
 
 - 0.1.0 (2026-09-11) 初版。定期取得・プッシュ・DRY_RUN・差分書き込み
 
-ライセンス: MIT
+## ライセンス・由来
+
+MIT License（株式会社ひまわり）。プロジェクトのひな形は [line-harness-oss](https://github.com/Shudesu/line-harness-oss)（MIT, Copyright (c) 2026 Shudesu）の `pnpm plugin:create` で生成したものを基にしています。
